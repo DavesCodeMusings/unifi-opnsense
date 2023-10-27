@@ -14,7 +14,6 @@ This guide assumes you know how to configure UniFi network devices using the Uni
 * UniFi U6 WiFi 6 Access Point
 * UniFi US8 (gen 1) POE Switch
 * Beelink EQ12 dual-NIC Mini PC (firewall)
-* Android mobile phone (IoT testing device)
 * ESP32-C3 (optional IoT client device)
 
 ## Software Used
@@ -28,24 +27,26 @@ The tutorial will use these values when setting up the devices. You can change t
 * UniFi SSID name: iotwifi
 * UniFi network name: IoT
 * VLAN tag: 10
-* IPv4 Subnet: 192.168.10.0/24
-* OPNSense IoT interface IP: 192.168.10.1
+* IPv4 subnet: 192.168.10.0/24
+* OPNSense interface name: OPT1
+* OPNSense interface IP: 192.168.10.1
 
 OPNSense <--> UniFi Switch <--> UniFi Access Point <-WiFi-> IoT Client
 
 ## Overview of Steps
 This guide covers setting up the UniFi network gear to provide the WiFi SSID and the OPNSense firewall to provide the DHCP addresses. Because there are only two network interfaces on the Beelink EQ12, the IoT network must be created as a Virtual Local Area Network (VLAN.)
 
-1. Create a new SSID for UniFi called iotwifi and test with a WiFi client.
+1. Create a new SSID for UniFi called _iotwifi_ and test with a WiFi client.
 2. Create a new Virtual Network (VLAN) for UniFi called IoT and tag it as 10.
-3. Assign the iotwifi SSID to the IoT network.
+3. Assign the _iotwifi_ SSID to the IoT network.
 4. Create a new VLAN in OPNSense and tag it as 10.
-5. Configure the OPNSense DHCP service for the new VLAN.
-6. Profit!
-
->Caution: Some of these steps may momentarily disrupt existing WiFi connetions, even when there is no misconfiguration.
+5. Assign the new VLAN to the interface OPT1.
+6. Configure the OPNSense DHCP service for the new VLAN.
+7. Profit!
 
 See below for detailed steps.
+
+>Caution: Some of these steps may momentarily disrupt existing WiFi connetions, even when there is no misconfiguration.
 
 ## Creating the IoT SSID
 Before creating any VLANs, first create a second SSID on your UniFi access point and test connectivity to the existing network.
@@ -91,31 +92,30 @@ The previous steps created the VLAN in the UniFi infrastructure. Now, OPNSense m
 ### Assign the VLAN to an Interface
 1. Navigate to Interfaces > Assignments
 2. Verify there is a New Interface available with the value vlan01 IoT (tag 10)
-3. Fill in the description as: IoT 
-4. Click the plus sign to add it.
-5. Save the change.
+3. Click the plus sign to add it.
+4. Save the change.
 
-This configuration change should result in a new OPNSense interface called IoT.
+This configuration change should result in a new OPNSense interface called OPT1.
 
-### Configure the IoT Network Properties
-1. In the OPNSense web console, navigate to Interfaces > IoT.
+### Configure the OPT1 Network Properties
+1. In the OPNSense web console, navigate to Interfaces > OPT1.
 2. Basic Configuration: Enable Interface must be checked.
 3. Basic Configuration: Block private networks should be unchecked.
 4. Generic Configuration: IPv4 Configuration Type needs to be set to Static IPv4.
 5. Static IPv4 Configuration: IPv4 address must be 192.168.10.1/24
 6. Save the configuration and Apply Changes.
 
-Once this step is finished, return to the OPNSense Dashboard (Lobby > Dashboard) and scroll down to Interfaces and Interface Statistics. Verify the IoT interface exists and has an IP address of 192.168.10.1 before proceeding.
+Once this step is finished, return to the OPNSense Dashboard (Lobby > Dashboard) and scroll down to Interfaces and Interface Statistics. Verify the OPT1 interface exists and has an IP address of 192.168.10.1 before proceeding.
  
 ### Configure DHCP for the IoT network
-1. In the OPNSense web console, navigate to Services > DHCPv4 > IoT.
-2. Enable DHCP server on the IoT interface checkbox needs to be checked.
+1. In the OPNSense web console, navigate to Services > DHCPv4 > OPT1.
+2. Enable DHCP server on the OPT1 interface checkbox needs to be checked.
 3. Enter the range of IPs available for the DHCP server. For example: 192.168.10.50 to 192.168.10.199
 4. Other DHCP parameters can be left as default.
 5. Save and Apply the DHCP configuration.
 
 After completing this step, reset the IoT client device.
-Check the UniFi console under WiFi and look for a connection to the iotwifi SSID.
+Check the UniFi console under WiFi and look for a connection to the _iotwifi_ SSID.
 Check the OPNSense console under Services > DHCPv4 > Leases and look for an IP address assignment.
 
 ## Troubleshooting
@@ -135,7 +135,7 @@ First, use the UniFi console to move your IoT SSID back to the IoT network befor
 
 Next, navigate to UniFi Devices in the UniFi console. Select the switch between the UniFi access point and the OPNSense firewall. Use Port Manager to examine the switch ports where these devices attach. Ensure the ports have Traffic Restriction turned off. (Users with advanced configurations may need to add the IoT VLAN to the allow list, but for most, disabling traffic restriction is the best option.)
 
-In the OPNSense console, access the Lobby > Dashboard. Examine Interfaces to ensure the IP configuration is correct and the IoT interface is up (shown in green.) Also check the Interface Statistics. The IoT interface should show packets in and packets. It will be a small number, but should be greater than zero. If no packets are flowing, double check the interface setup.
+In the OPNSense console, access the Lobby > Dashboard. Examine Interfaces to ensure the IP configuration is correct and the OPT1 interface is up (shown in green.) Also check the Interface Statistics. The OPT1 interface should show packets in and packets. It will be a small number, but should be greater than zero. If no packets are flowing, double check the interface setup.
 
 You can also check the OPNSense configuration from the SSH interface using the command `ifconfig`. You should see your IoT VLAN as part of the output.
 
