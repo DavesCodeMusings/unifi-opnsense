@@ -4,7 +4,7 @@ I like my UniFi access point and ethernet switches. I'm less impressed with thei
 ## Network Topology
 ![Network Topology Diagram](NetworkTopology.png)
 
-_Topology diagram hastily constructed in LibreOffice using Material Design icons_
+_Hastily constructed network diagram using LibreOffice and Material Design icons_
 
 My home network consists of an 8-port UniFi POE switch at its core.
 * One POE port powers the U6 Lite access point
