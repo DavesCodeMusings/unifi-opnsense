@@ -1,6 +1,13 @@
 # Defining IoT Firewall Rules
 Now that I have a separate network segment for IoT devices, with my OPNSense firewall in the middle, it's time to think about firewall rules and what devices go where. I.T. Security is not my specialty, so I'm using a combination of internet research, things I've picked up from the I.T. security pros at work, and common sense. Everyone's setup is unique, so do what's right for you and don't take this guide as the last word on IoT security.
 
+## Overview
+Here's a peek at the resulting firewall configuration. The explanation of how I got here follows.
+
+![Firewall Diagram](FirewallDiagram.png)
+
+_Figure 1: A visual representation of rules governing network traffic_
+
 ## Classifying Devices
 Before any firewall rules are created, the first step is to determine which of my devices belong on the IoT network segment and which ones belong on the default network. This seems like it should be pretty easy. Is it an IoT device? Put it on the IoT network. But what about Home Assistant, my home automation hub? Where does it belong? Does it go on the IoT network with the devices it interacts with or, being a server, should it reside with the other servers on the default network?
 
