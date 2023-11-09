@@ -1,5 +1,5 @@
 # UniFi + OPNSense
-I like my UniFi access point and ethernet switches. I'm less impressed with their firewall/router offerings. So I have a comodity x86 machine running OPNSense. Mixing more than one ecosystem always comes with unique challenges. So as I solve them, I'll post solutions here in hopes someone else may find the information useful.
+I like my UniFi access point and ethernet switches. I'm less impressed with their firewall/router offerings. So I have a comodity x86 machine running OPNSense. Mixing more than one ecosystem always comes with unique challenges. As I solve them, I'll post solutions here in hopes someone else may find the information useful.
 
 ## Network Topology
 ![Network Topology Diagram](NetworkTopology.png)
