@@ -21,4 +21,4 @@ The network is segmented into two virtual networks (VLANs), tagged as #1 and #10
 ## Setup Details
 [IoT VLAN](iot.md) -- The first challenge I ran into was creating a separate network for Internet of Things (IoT) devices when my firewall only has two physical ethernet ports. The short answer is VLANs. For the details, see the guide.
 
-[Firewall Rules](firewall.md) -- For a little insight into how I decided which devices should go where and how to control access via OPNSense, I've created this explanation of the process and the resulting rules.
+[Firewall Rules](firewall.md) -- For a little insight into how I decided which devices should go on which VLAN and how to control access via OPNSense, I've created this explanation of the process and the resulting firewall rules.
