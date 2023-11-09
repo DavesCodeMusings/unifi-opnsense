@@ -24,7 +24,7 @@ The network is segmented into two virtual networks (VLANs), tagged as #1 and #10
 _Figure 2: Another fabulous LibreOffice diagram, this time showing network traffic flow between firewall interfaces._
 
 ## Setup Details
-To go deeper than what's shown in the diagrams, I've created a couple documents that detail the how and why.
+To go deeper than what's shown in the diagrams, I've created a couple documents to detail the how and why.
 
 [IoT VLAN](iot.md) -- The first challenge I ran into was creating a separate network for Internet of Things (IoT) devices when my firewall only has two physical ethernet ports. The short answer is VLANs. For the details, see the guide.
 
