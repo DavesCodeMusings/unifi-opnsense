@@ -18,6 +18,11 @@ The network is segmented into two virtual networks (VLANs), tagged as #1 and #10
 * VLAN 10 is a tagged VLAN for home automation and home entertainment traffic. It's for devices with weak security, possibly out-of-date firmware or abandonware operating systems. This includes the "smart" TV, home theater receiver, smart thermostat, solar inverter, etc. These devices do not store personally identifiable data.
 * The wireless access point has two SSIDs. The primary SSID is associated with the default VLAN 1 and used for PCs and other trusted devices. The secondary SSID is for untrusted IoT devices and is associated with VLAN 10.
 
+## Firewall Rule Visualization
+![Firewall Diagram](FirewallDiagram.png)
+
+_Figure 2: Another fabulous LibreOffice diagram showing network traffic flow between firewall interfaces._
+
 ## Setup Details
 [IoT VLAN](iot.md) -- The first challenge I ran into was creating a separate network for Internet of Things (IoT) devices when my firewall only has two physical ethernet ports. The short answer is VLANs. For the details, see the guide.
 
