@@ -16,7 +16,7 @@ My home network consists of an 8-port UniFi POE switch at its core.
 The network is segmented into two virtual networks (VLANs), tagged as #1 and #10. Routing is handled by the OPNSense firewall.
 * VLAN 1 is the default VLAN and carries traffic for trusted devices like phones, laptops, and desktops. Basically, it's for any device with an Android, Linux, or Windows operating system that receives regular security updates. These devices also store personally identifiable data that should be kept secure.
 * VLAN 10 is a tagged VLAN for home automation and home entertainment traffic. It's for devices with weak security, possibly out-of-date firmware or abandonware operating systems. This includes the "smart" TV, home theater receiver, smart thermostat, solar inverter, etc. These devices do not store personally identifiable data.
-* The wireless access point has two SSIDs. The primary SSID associated with the default VLAN 1 and used for PCs and other trusted devices. The secondary SSID is for untrusted IoT devices and is associated with VLAN 10.
+* The wireless access point has two SSIDs. The primary SSID is associated with the default VLAN 1 and used for PCs and other trusted devices. The secondary SSID is for untrusted IoT devices and is associated with VLAN 10.
 
 ## Setup Details
 [IoT VLAN](iot.md) -- The first challenge I ran into was creating a separate network for Internet of Things (IoT) devices when my firewall only has two physical ethernet ports. The short answer is VLANs. For the details, see the guide.
