@@ -1,6 +1,11 @@
 # UniFi / OPNSense IoT Network
 This guide shows how to create a separate Internet of Things (IoT) WiFi VLAN for your home using a Ubiquiti UniFi access point, UniFi gigabit switch, and an OPNSense firewall installed on comodity x86 hardware.
 
+## Overview
+![Network Topology](NetworkTopology.png)
+
+
+
 ## Why Would You Do This?
 Internet of Things (IoT) devices are becoming more prevalent as Smart Home technology takes hold. Most of these devices are manufactured with their primary focus on convenience rather than security. This lax security posture can create a risk to your home network. Best practice recommendations are to segment the IoT devices off onto a separate network and use firewall rules to control what these devices can and can't access on the rest of the network.
 
