@@ -21,9 +21,11 @@ The network is segmented into two virtual networks (VLANs), tagged as #1 and #10
 ## Firewall Rule Visualization
 ![Firewall Diagram](FirewallDiagram.png)
 
-_Figure 2: Another fabulous LibreOffice diagram showing network traffic flow between firewall interfaces._
+_Figure 2: Another fabulous LibreOffice diagram, this time showing network traffic flow between firewall interfaces._
 
 ## Setup Details
+To go deeper than what's shown in the diagrams, I've created a couple documents that detail the how and why.
+
 [IoT VLAN](iot.md) -- The first challenge I ran into was creating a separate network for Internet of Things (IoT) devices when my firewall only has two physical ethernet ports. The short answer is VLANs. For the details, see the guide.
 
 [Firewall Rules](firewall.md) -- For a little insight into how I decided which devices should go on which VLAN and how to control access via OPNSense, I've created this explanation of the process and the resulting firewall rules.
