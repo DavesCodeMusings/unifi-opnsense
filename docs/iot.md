@@ -25,7 +25,7 @@ This guide assumes you know how to configure UniFi network devices using the Uni
 
 ## Software Used
 * UniFi controller 7.5.176
-* OPNSense 23.7.6 (firewall)
+* OPNSense 23.7.7 (firewall)
 * MicroPython 1.21 (optional IoT client device)
 
 ## Overview of Configuration
