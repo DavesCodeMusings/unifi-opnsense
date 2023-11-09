@@ -21,12 +21,12 @@ Using this criteria, I can already answer the question of where to put my Home A
 
 Going through this process with the other devices on my network, I was able to classify them relatively easily. Here's what I came up with:
 
-### Default Network (regular patches & updates, and personal information)
+### Default Network (regular patches & updates; personal information)
 * PCs and laptops
 * Mobile phones uing WiFi connection
 * Nextcloud and other network attached storage
 
-### IoT Network (unreliable patch & update schedule, and no personal information)
+### IoT Network (unreliable patch & update schedule; no personal information)
 * TV & home theater receiver, and streaming devices
 * Video game consoles
 * Smart thermostat
