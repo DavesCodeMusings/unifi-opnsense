@@ -147,4 +147,4 @@ In the OPNSense console, access the Lobby > Dashboard. Examine Interfaces to ens
 You can also check the OPNSense configuration from the SSH interface using the command `ifconfig`. You should see your IoT VLAN as part of the output.
 
 ## Next Steps
-The whole reason for creating a separate IoT network is to improve your network's security. To do this, you'll need to create firewall rules in OPNSense. While the setup for your network is unique, I have a document explaining what I configured for my network that you can use as a guide.
+The whole reason for creating a separate IoT network is to improve your network's security. To do this, you'll need to create firewall rules in OPNSense. While the setup for your network is unique, I have a document explaining what I configured for my network that you can use as a guide: [Firewall Rules](firewall.md)
