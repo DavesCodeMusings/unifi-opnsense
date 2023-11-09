@@ -37,7 +37,7 @@ Going through this process with the other devices on my network, I was able to c
 Now that I know on which network segment devices are going to be located, I need to figure out what kind of access they need to get their job done. Do they need to talk to other devices on the local network? Do they need to talk to the internet (cloud)?
 
 Here's what I determined:
-* Many home automation devices use a REST API (HTTP based) providing a way to _pull_ data.
+* Many of my home automation devices provide a REST API (HTTP based) for the home automation hub to _pull_ data.
 * Some home automation devices use MQTT to _push_ their data.
 * One device (the solar inverter) is cloud connected.
 * The solar inverter does not always contact the same IP address when it uploads its data.
