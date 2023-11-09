@@ -26,7 +26,7 @@ Going through this process with the other devices on my network, I was able to c
 * Mobile phones uing WiFi connection
 * Nextcloud and other network attached storage
 
-### IoT Network (unreliable patches & updates, and no personal information)
+### IoT Network (unreliable patch & update schedule, and no personal information)
 * TV & home theater receiver, and streaming devices
 * Video game consoles
 * Smart thermostat
