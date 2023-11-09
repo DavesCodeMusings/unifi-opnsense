@@ -146,5 +146,5 @@ In the OPNSense console, access the Lobby > Dashboard. Examine Interfaces to ens
 
 You can also check the OPNSense configuration from the SSH interface using the command `ifconfig`. You should see your IoT VLAN as part of the output.
 
-## Further Security Hardening
-The whole reason for creating a separate IoT network is to improve your network's security. There are several more steps you can take to this end. This includes creating firewall rules in OPNSense and restricting VLANs on your UniFi switch ports. What you configure depends on a number of factors and is beyond the scope of this document. This is just a friendly reminder that you've taken the first step by segmenting your network to isolate IoT devices, but you're not done yet.
+## Next Steps
+The whole reason for creating a separate IoT network is to improve your network's security. To do this, you'll need to create firewall rules in OPNSense. While the setup for your network is unique, I have a document explaining what I configured for my network that you can use as a guide.
